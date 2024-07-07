@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .inter-bold {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
