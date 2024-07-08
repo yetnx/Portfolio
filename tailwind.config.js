@@ -37,6 +37,7 @@ export default {
         par : '#8C8C8C',
         back : '#F7F7F7',
         slot : '#EDEDED',
+        foot : '#222222',
       },
       padding: {
         '15': '15px',
