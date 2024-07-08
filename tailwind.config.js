@@ -34,15 +34,7 @@ export default {
         '100vw': '100vw',
       },
       colors: {
-        gray : '#202124',
-        hover : '#2D2E31',
-        border : '#5C6065',
-        icon : '#9AA0A6',
-        secondary : '#303134',
-        bordersec : '#5F6368',
-        text : '#BFBFBF',
-        button : '#99C3FF',
-        backbot : '#171717',
+        par : '#8C8C8C',
       },
       padding: {
         '15': '15px',
