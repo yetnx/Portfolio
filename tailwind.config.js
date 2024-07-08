@@ -36,6 +36,7 @@ export default {
       colors: {
         par : '#8C8C8C',
         back : '#F7F7F7',
+        slot : '#EDEDED',
       },
       padding: {
         '15': '15px',
