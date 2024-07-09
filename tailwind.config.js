@@ -9,6 +9,7 @@ export default {
       height: {
         '5vh': '5vh',
         '10vh': '10vh',
+        '15vh': '15vh',
         '20vh': '20vh',
         '30vh': '30vh',
         '40vh': '40vh',
@@ -38,6 +39,7 @@ export default {
         back : '#F7F7F7',
         slot : '#EDEDED',
         foot : '#222222',
+        icon : '#262224',
       },
       padding: {
         '15': '15px',
