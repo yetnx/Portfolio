@@ -1,200 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            icon: 'var(--icon-color)',
+            back: 'var(--back-color)',
+            slot: 'var(--slot-color)',
+            foot: 'var(--foot-color)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --icon-color: #ffffff;
+      --back-color: #f5f5f5;
+      --slot-color: #ffffff;
+      --foot-color: #000000;
+    }
+    .dark {
+      --icon-color: #1f2937;
+      --back-color: #111827;
+      --slot-color: #1f2937;
+      --foot-color: #111827;
+    }
+    .inter-bold { font-family: 'Inter', sans-serif; font-weight: 700; }
+    .inter-medium { font-family: 'Inter', sans-serif; font-weight: 500; }
+  </style>
   <title>My Portfolio</title>
 </head>
-<body class="overflow-x-hidden">
-  <div class="h-100vh flex flex-col ">
-    <div class="flex items-center w-100vw h-10vh pl-7">
+<body class="overflow-x-hidden bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+  <div class="h-screen flex flex-col">
+    <div class="flex items-center justify-between w-full h-[10vh] px-7">
       <div id="image-container" class="flex justify-center items-center h-11 w-11 bg-icon rounded-md hover:cursor-help transition-all">
         <img id="image" class="h-9 w-9 rounded-md transition-all" src="https://i.pinimg.com/564x/cb/ef/98/cbef98583b5166ab0d9c0ba2902b77a3.jpg" alt="">
       </div>
+      <button id="darkModeToggle" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-md transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
     </div>
 
-    <div class="w-100vw h-15vh text-7xl flex justify-center items-center text-center">
+    <div class="w-full h-[15vh] text-7xl flex justify-center items-center text-center">
       <h1 class="inter-bold tracking-tighter">
         Front End Dev.
       </h1>
     </div>
 
-    <div class="w-100vw h-60vh flex justify-center items-center text-center">
-      <img class="rounded-4xl w-50vw" src="https://framerusercontent.com/images/NHLsx4N6Yawu4kvEQuclZAD5cc.gif" alt="">
+    <div class="w-full h-[60vh] flex justify-center items-center text-center">
+      <img class="rounded-3xl w-1/2" src="https://framerusercontent.com/images/NHLsx4N6Yawu4kvEQuclZAD5cc.gif" alt="">
     </div>
 
     <div class="flex justify-center items-center text-center my-auto">
-      <p class="text-2xl inter-medium text-par tracking-tight">
+      <p class="text-2xl inter-medium text-current tracking-tight">
         Welcome to my portfolio.
       </p>
     </div>
 
-    <div class="flex justify-between items-center text-center w-20vw mx-auto mt-auto h-10vh">
-      <a href="https://github.com/yetnx" target="_blank">
-        <div class="flex justify-between items-center text-center w-40">
-          <div>
-            <img class="h-11 w-11" src="https://framerusercontent.com/images/yDF9b0sgHwVdRnRZcVc8XTPo.webp?scale-down-to=512" alt="">
-          </div>
-  
-          <div>
-            <h2 class="inter-bold tracking-tighter text-par text-4xl">
-              Github
-            </h2>
-          </div>
-        </div>
+    <div class="flex justify-between items-center text-center w-1/5 mx-auto mt-auto h-[10vh]">
+      <a href="https://github.com/yetnx" target="_blank" class="flex justify-between items-center text-center w-40">
+        <img id="github-icon" class="h-11 w-11" src="https://framerusercontent.com/images/yDF9b0sgHwVdRnRZcVc8XTPo.webp?scale-down-to=512" alt="">
+        <h2 class="inter-bold tracking-tighter text-current text-4xl">
+          Github
+        </h2>
       </a>
 
       <div class="flex justify-between items-center text-center w-36"> 
-        <div>
-          <img class="w-11 h-8" src="https://framerusercontent.com/images/BltfX3aF2nHnm6zAzlaT5jPhRTM.webp?scale-down-to=512" alt="">
-        </div>
-
-        <div>
-          <h2 class="inter-bold tracking-tighter text-par text-4xl">
-            Gmail
-          </h2>
-        </div>
+        <img class="w-11 h-8" src="https://framerusercontent.com/images/BltfX3aF2nHnm6zAzlaT5jPhRTM.webp?scale-down-to=512" alt="">
+        <h2 class="inter-bold tracking-tighter text-current text-4xl">
+          Gmail
+        </h2>
       </div>
     </div>
   </div>
 
-  <div class="h-50vh bg-back">
-    <div class="flex justify-between items-center text-center h-50vh w-50vw mx-auto">
+  <div class="h-[50vh] bg-back dark:bg-gray-800 transition-colors duration-300">
+    <div class="flex justify-between items-center text-center h-full w-1/2 mx-auto">
       <div class="flex flex-col">
-        <h1 class="inter-bold tracking-tighter text-par text-4xl pb-3">
+        <h1 class="inter-bold tracking-tighter text-current text-4xl pb-3">
           I know...
         </h1>
 
-        <div class="h-80 w-80 bg-slot rounded-3xl flex flex-col justify-between items-center text-center p-6">
-          <div class="h-24 mr-auto pl-8">
-            <img class="h-20" src="https://imgs.search.brave.com/jQSwAmrI5GnCmB3Cb9c_HTN8RBq6AO5s43ZCf4emxqo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMDUxLzEwNTEy/NzcucG5nP3NlbXQ9/YWlzX2h5YnJpZA" alt="">
-          </div>
-
-          <div class="h-24 ml-auto pr-6">
-            <img class="h-16" src="https://imgs.search.brave.com/FiIS_nKlldX0uoNz31Z1EVjzQR9DzLzLvNqrGYb4bs4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC90YWlsd2lu/ZC1jc3MtaWNvbi0x/MDI0eDYxNS1mZGVp/czVyMS5wbmc" alt="">
-          </div>
-
-          <div class="h-24 mr-auto pl-8">
-            <img class="h-20" src="https://imgs.search.brave.com/gNwShVHwW-NISMTyiJRTVYuQgBb5IEBXQSQ4nqHcsVk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9maWdtYS1p/Y29uLTY4NHgxMDI0/LWJmbzdkb2ZtLnBu/Zw" alt="">
-          </div>
+        <div class="h-80 w-80 bg-slot dark:bg-gray-700 rounded-3xl flex flex-col justify-between items-center text-center p-6 transition-colors duration-300">
+          <img class="h-20 mr-auto pl-8" src="https://imgs.search.brave.com/jQSwAmrI5GnCmB3Cb9c_HTN8RBq6AO5s43ZCf4emxqo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMDUxLzEwNTEy/NzcucG5nP3NlbXQ9/YWlzX2h5YnJpZA" alt="">
+          <img class="h-16 ml-auto pr-6" src="https://imgs.search.brave.com/FiIS_nKlldX0uoNz31Z1EVjzQR9DzLzLvNqrGYb4bs4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC90YWlsd2lu/ZC1jc3MtaWNvbi0x/MDI0eDYxNS1mZGVp/czVyMS5wbmc" alt="">
+          <img class="h-20 mr-auto pl-8" src="https://imgs.search.brave.com/gNwShVHwW-NISMTyiJRTVYuQgBb5IEBXQSQ4nqHcsVk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9maWdtYS1p/Y29uLTY4NHgxMDI0/LWJmbzdkb2ZtLnBu/Zw" alt="">
         </div>
       </div>
 
       <div>
-        <h1 class="inter-bold tracking-tighter text-par text-4xl pb-3">
+        <h1 class="inter-bold tracking-tighter text-current text-4xl pb-3">
           Im learning...
         </h1>
 
-        <div class="h-80 w-80 bg-slot rounded-3xl flex flex-col justify-between items-center text-center p-6">
-          <div class="h-24 ml-auto pr-8">
-            <img class="h-20" src="https://imgs.search.brave.com/XpPXrPPJT3LlJSbqj1PtnJ89ERtjgkdr8nbTuLCcqZQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9qYXZhc2Ny/aXB0LWpzLWljb24t/MjA0OHgyMDQ4LW55/eHZ0dmswLnBuZw" alt="">
-          </div>
-
-          <div class="h-24 mr-auto pl-6">
-            <img class="h-20" src="https://imgs.search.brave.com/FihthY8hMrxn60mcDaOWs6cpLeU5olROkI4hra30AuQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9h/L2E3L1JlYWN0LWlj/b24uc3Zn" alt="">
-          </div>
-
-          <div class="h-24 ml-auto pr-8">
-            <img class="h-20" src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png" alt="">
-          </div>
+        <div class="h-80 w-80 bg-slot dark:bg-gray-700 rounded-3xl flex flex-col justify-between items-center text-center p-6 transition-colors duration-300">
+          <img class="h-20 ml-auto pr-8" src="https://imgs.search.brave.com/XpPXrPPJT3LlJSbqj1PtnJ89ERtjgkdr8nbTuLCcqZQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9qYXZhc2Ny/aXB0LWpzLWljb24t/MjA0OHgyMDQ4LW55/eHZ0dmswLnBuZw" alt="">
+          <img class="h-20 mr-auto pl-6" src="https://imgs.search.brave.com/FihthY8hMrxn60mcDaOWs6cpLeU5olROkI4hra30AuQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9h/L2E3L1JlYWN0LWlj/b24uc3Zn" alt="">
+          <img class="h-20 ml-auto pr-8" src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png" alt="">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="h-20vh bg-back">
-    <div class="flex justify-center items-center text-center h-20vh">
-      <h1 class="inter-bold tracking-tighter text-black text-6xl">
+  <div class="h-[20vh] bg-back dark:bg-gray-800 transition-colors duration-300">
+    <div class="flex justify-center items-center text-center h-full">
+      <h1 class="inter-bold tracking-tighter text-current text-6xl">
         Projects
       </h1>
     </div>
   </div>
 
-  <div class="h-100vh bg-back">
+  <div class="h-screen bg-back dark:bg-gray-800 transition-colors duration-300">
     <div class="flex flex-col justify-center items-center text-center">
-      <div class="w-100vw h-50vh flex flex-col justify-center items-center text-center">
-        <h1 class="inter-bold tracking-tighter text-par text-4xl">
+      <div class="w-full h-1/2 flex flex-col justify-center items-center text-center">
+        <h1 class="inter-bold tracking-tighter text-current text-4xl">
           Netflix
         </h1>
 
-        <p class="inter-bold tracking-tighter text-par text-4xl">
+        <p class="inter-bold tracking-tighter text-current text-4xl">
           This was one of the clones i did of famous websites.
         </p>
 
-        <div class="flex justify-center items-center text-center h-8 w-32 bg-black rounded-lg mt-3">
+        <div class="flex justify-center items-center text-center h-8 w-32 bg-black dark:bg-white rounded-lg mt-3">
           <a href="https://netflix-clone-three-wheat-36.vercel.app/" target="_blank">
-            <button>
-            <h1 class="inter-medium text-white">
+            <button class="inter-medium text-white dark:text-black">
               Go to the site
-            </h1>
             </button>
           </a>
         </div>
       </div>
 
-      <div class="w-100vw h-50vh flex flex-col justify-center items-center text-center">
-        <h1 class="inter-bold tracking-tighter text-par text-4xl">
+      <div class="w-full h-1/2 flex flex-col justify-center items-center text-center">
+        <h1 class="inter-bold tracking-tighter text-current text-4xl">
           Pinterest
         </h1>
 
-        <p class="inter-bold tracking-tighter text-par text-4xl">
+        <p class="inter-bold tracking-tighter text-current text-4xl">
           Another one
         </p>
 
-        <div class="flex justify-center items-center text-center h-8 w-32 bg-black rounded-lg mt-3">
+        <div class="flex justify-center items-center text-center h-8 w-32 bg-black dark:bg-white rounded-lg mt-3">
           <a href="https://pinterest-clone-sigma-ochre.vercel.app/" target="_blank">
-            <button>
-            <h1a class="inter-medium text-white">
+            <button class="inter-medium text-white dark:text-black">
               Go to the site
-            </h1a>
             </button>
           </a>
         </div>
       </div>
     </div>
   </div>
-  <div class="h-10vh w-100vw bg-foot flex justify-center items-center text-center">
-    <div class="h-10vh w-100vw bg-foot flex justify-center items-center text-center">
-      <h3 class="text-white inter-medium">
-        @yetnx
-      </h3>
-    </div>
+  <div class="h-[10vh] w-full bg-foot dark:bg-gray-950 flex justify-center items-center text-center transition-colors duration-300">
+    <h3 class="text-white inter-medium">
+      @yetnx
+    </h3>
   </div>
+  <script>
+    const images = [
+      "https://i.pinimg.com/564x/cb/ef/98/cbef98583b5166ab0d9c0ba2902b77a3.jpg",
+      "https://i.pinimg.com/564x/54/40/3c/54403c3bb5cf3fedce044d5b593690d0.jpg",
+      "https://i.pinimg.com/564x/75/4f/86/754f86d51e37c8bb8d42e7a04f52feec.jpg",
+      "https://i.pinimg.com/564x/44/53/6e/44536e47cd13b4b9fd4d1bd2679f7103.jpg",
+      "https://i.pinimg.com/564x/be/a5/9f/bea59f571a410a47cd78e513d6b46548.jpg"
+    ];
+
+    const colors = ["border-red-500", "border-green-500", "border-blue-500", "border-yellow-500", "border-pink-500"];
+
+    let currentIndex = 0;
+    const imageContainer = document.getElementById("image-container");
+    const imageElement = document.getElementById("image");
+
+    imageContainer.addEventListener("click", () => {
+      imageElement.classList.add("explode");
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex];
+        imageElement.classList.remove("explode");
+
+        const currentColorClass = colors[currentIndex];
+        imageContainer.classList.remove(...colors);
+        imageContainer.classList.add(currentColorClass);
+      }, 500);
+    });
+
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const html = document.querySelector('html');
+    const githubIcon = document.getElementById('github-icon');
+
+    const lightModeIcon = "https://framerusercontent.com/images/yDF9b0sgHwVdRnRZcVc8XTPo.webp?scale-down-to=512";
+    const darkModeIcon = "https://imgs.search.brave.com/X2n57cCMWoGx70py_eznwyk2eN3Nme1S_3vmUbFrm8M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtMDAuaWNvbmR1/Y2suY29tL2Fzc2V0/cy4wMC9naXRodWIt/aWNvbi0yMDQ4eDE5/ODgtanp2emNmMnQu/cG5n";
+
+    darkModeToggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+  
+  // Change GitHub icon based on dark mode
+  if (html.classList.contains('dark')) {
+    githubIcon.src = darkModeIcon;
+    darkModeToggle.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    `;
+  } else {
+    githubIcon.src = lightModeIcon;
+    darkModeToggle.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    `;
+  }
+});
+  </script>
 </body>
-<script src="script.js">
-  const images = [
-    "https://i.pinimg.com/564x/cb/ef/98/cbef98583b5166ab0d9c0ba2902b77a3.jpg",
-    "https://i.pinimg.com/564x/54/40/3c/54403c3bb5cf3fedce044d5b593690d0.jpg",
-    "https://i.pinimg.com/564x/75/4f/86/754f86d51e37c8bb8d42e7a04f52feec.jpg",
-    "https://i.pinimg.com/564x/44/53/6e/44536e47cd13b4b9fd4d1bd2679f7103.jpg",
-    "https://i.pinimg.com/564x/be/a5/9f/bea59f571a410a47cd78e513d6b46548.jpg"
-  ];
-
-  const colors = ["border-red-500", "border-green-500", "border-blue-500", "border-yellow-500", "border-pink-500"];
-
-  let currentIndex = 0;
-  const imageContainer = document.getElementById("image-container");
-  const imageElement = document.getElementById("image");
-
-  imageContainer.addEventListener("click", () => {
-    // Add explosion effect
-    imageElement.classList.add("explode");
-
-    // Change image after explosion effect
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      imageElement.src = images[currentIndex];
-      imageElement.classList.remove("explode");
-
-      // Change border color
-      const currentColorClass = colors[currentIndex];
-      imageContainer.classList.remove(...colors);
-      imageContainer.classList.add(currentColorClass);
-    }, 500);
-  });
-</script>
 </html>

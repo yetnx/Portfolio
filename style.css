@@ -43,3 +43,11 @@ body::-webkit-scrollbar {
 .explode {
   animation: explosion 0.5s forwards;
 }
+
+#darkModeToggle svg {
+  transition: transform 0.5s ease;
+}
+
+html.dark #darkModeToggle svg {
+  transform: rotate(40deg) scale(0.9);
+}
