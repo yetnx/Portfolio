@@ -32,7 +32,7 @@ export default {
         '70vw': '70vw',
         '80vw': '80vw',
         '90vw': '90vw',
-        '100vw': '100vw',
+        '100vw': '100vw'
       },
       colors: {
         par : '#8C8C8C',
