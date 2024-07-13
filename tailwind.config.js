@@ -35,6 +35,7 @@ export default {
         '100vw': '100vw',
       },
       colors: {
+        main : '222831',
         par : '#8C8C8C',
         back : '#F7F7F7',
         slot : '#EDEDED',
